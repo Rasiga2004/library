@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="LibraryApp">
+    <head>
+        <title>Library Book Genres</title>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="GenreController as genreCtrl">
+            <h2>Select Book Genre</h2>
+            <select ng-model="genreCtrl.selectGenre">
+                <option value="Fiction">Fictional</option>
+                <option value="fantacy">fantacy</option>
+                <option value="biography">biography</option>
+                <option value="motivational">motivational</option>
+                <option value="horror">horror</option>
+            </select>
+        
+        <div ng-switch="genreCtrl.selectGenre">
+            <div ng-switch-when="Fiction">
+                <h3>Fiction</h3>
+                <img width="200" height="300" src="https://cdn.vox-cdn.com/thumbor/M8TJPhrrulC5ZaQFbVca87rzHtU=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/21960151/71UH89XIA8L.jpg">
+                <p>Here in this fiction section, you will explore the imaginary and unusual
+                     fictioanl experiencs with extra-ordinary stories</p>
+
+            </div>
+            <div ng-switch-when="fantacy">
+                <h3>fantacy</h3>
+                <img width="100" height="200" src="https://m.economictimes.com/photo/53575599.cms">
+                <p>Fantasy is a genre of speculative fiction involving magical elements, typically set in a fictional universe and usually inspired by mythology or folklore.</p>
+            </div>
+            <div ng-switch-when="biography">
+                <h3>biography</h3>
+                <img width="500" height="300" src="https://asset20.ckassets.com/blog/wp-content/uploads/sites/5/2023/06/Dreams-from-My-Father-by-Barack-Obama-1024x512.jpg">
+                <p>A biography is a nonfiction account of a real person's life written by someone else. Biographies may offer detailed accounts on people lives, specific important experiences, the historical impact of someone</p>
+            </div>
+            <div ng-switch-when="motivational">
+                <h3>motivational</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU8hDUtS7w7fDYXQ5pVv4ssYjxrRNwskIWvw&usqp=CAU">
+                <p>Inspirational Fiction encompasses many genres including Romance, Historical, Suspense, Fantasy, Teen, even Horror!</p>
+            </div>
+            <div ng-switch-when="horror">
+                <h3>horror</h3>
+                <img width="100" height="200" src="https://img.buzzfeed.com/buzzfeed-static/static/2018-10/5/15/asset/buzzfeed-prod-web-05/sub-buzz-13709-1538769599-1.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto">
+                <p>Horror is a genre of literature, film, and television that is meant to scare, startle, shock, and even repulse audiences. The key focus of a horror novel, horror film, or horror TV show is to elicit a sense of dread in the reader through frightening images, themes, and situations.</p>
+            </div>
+            <div ng-switch-default>
+                <h3>Select a Genre</h3>
+                <p>Please select a book genre to continue</p>
+            </div>
+        </div>
+    </div>
+        <script>
+            angular.module('LibraryApp',[])
+            .controller('GenreController',function(){
+                var genreCtrl=this;
+                genreCtrl.selectedGenre="";
+            })
+        </script>
+    </body>
+</html>
